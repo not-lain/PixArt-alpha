@@ -1,9 +1,9 @@
-_base_ = ['/workspace/PixArt-alpha/configs/PixArt_xl2_internal.py']
-data_root = '/workspace'
+_base_ = ['./configs/PixArt_xl2_internal.py']
+data_root = './'
 
 image_list_json = ['data_info.json',]
 
-data = dict(type='InternalData', root='/workspace/pixart-pokemon', image_list_json=image_list_json, transform='default_train', load_vae_feat=True)
+data = dict(type='InternalData', root='./data', image_list_json=image_list_json, transform='default_train', load_vae_feat=True)
 image_size = 512
 
 # model setting
@@ -12,7 +12,7 @@ window_size=0
 use_rel_pos=False
 model = 'PixArt_XL_2'
 fp32_attention = True
-load_from = "/workspace/PixArt-alpha/output/pretrained_models/PixArt-XL-2-512x512.pth"
+load_from = "output/pretrained_models/PixArt-XL-2-512x512.pth"
 vae_pretrained = "output/pretrained_models/sd-vae-ft-ema"
 lewei_scale = 1.0
 
